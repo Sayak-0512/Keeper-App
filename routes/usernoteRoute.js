@@ -56,7 +56,7 @@ console.log(req.body);
       else
       {
 
-        passport.authenticate("local")(req,res,function(){
+        passport.authenticate("local")(req,res,function(){ 
             // flag=1;
           res.json({success: true, message:"Your account is saved."});
         });
