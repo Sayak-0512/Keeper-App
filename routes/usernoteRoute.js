@@ -161,12 +161,14 @@ app.post("/create",async (req,res) => {
   };
   await Usernote.findOneAndUpdate({username: username},  { $push: { notes: newNote } },{
   returnOriginal: false
-});
+})
+.catch(err => console.log(err));
 
 })
-app.get("/notes",(req,res) => {
- Usernote.find({username: req.query.username})
-  .then(foundNotes => res.json(foundNotes));
+app.get("/notes",async (req,res) => {
+ await Usernote.find({username: req.query.username})
+  .then(foundNotes => res.json(foundNotes))
+  .catch(err => console.log(err));
 })
 
 app.post("/delete",async (req,res) => {
@@ -176,7 +178,8 @@ app.post("/delete",async (req,res) => {
   const tobedeleted={title: title, content: content};
   await Usernote.findOneAndUpdate({username: username},  { $pull: { notes: tobedeleted } },{
     returnOriginal: false
-  });
+  })
+  .catch(err => console.log(err));
   // Usernote.deleteOne({title: title, content: content},function(err){
   //   if(err)
   //   console.log(err);
