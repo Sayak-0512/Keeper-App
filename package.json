@@ -1,6 +1,7 @@
 {
   "name": "keeper_app",
   "version": "1.0.0",
+  "proxy": "https://localhost:3000",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -13,6 +14,13 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.3"
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.3",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "superagent": "^6.1.0"
   }
 }

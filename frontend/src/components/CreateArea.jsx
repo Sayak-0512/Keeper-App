@@ -3,8 +3,10 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
 import axios from "axios";
+require('dotenv').config();
 
 function CreateArea(props) {
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT ;
   const [isExpanded,setIsExpanded]=useState(false);
   const [input,setInput]=useState({
     title:"",
@@ -23,10 +25,11 @@ function handleSubmit(event){
   event.preventDefault();
 
   const newNote={
+    username: props.username,
     title: input.title,
     content:input.content
   }
-  axios.post("http://localhost:3001/create",newNote);
+  axios.post(`${API_ENDPOINT}/create`,newNote);
   props.handleClick(input);
 
   setInput({title: "", content: ""})

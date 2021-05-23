@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.image{
+  height: 700px;
+  width: 700px;
+  position: absolute;
+  top: 200px;
+}
+
+.text{
+
+  position: absolute;
+  left: 750px;
+  text-align: center;
+  top: 400px;
+}
+.heading{
+  font-size: 100px;
+  font-family: 'Pacifico', cursive;
+  line-height: 2;
+
+}
+.para{
+  font-family: "Fontdiner Swanky", cursive;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+.buttonerror {
+  font-family: "Fontdiner Swanky", cursive;
+  font-size: 1rem;
+  color: #383838;
+  border: none;
+  background-color: #f36a6f;
+  padding: 1rem 2.5rem;
+  border-radius: 100px;
+}

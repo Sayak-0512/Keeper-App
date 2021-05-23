@@ -1,16 +1,18 @@
 import React from "react";
 import DeleteIcon from '@material-ui/icons/Delete';
 import axios from "axios";
+require('dotenv').config();
 function Note(props) {
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT ;
   function handleClick(event){
     event.preventDefault();
 
     props.handleDelete(props.id);
-    const noteToBeDeleted={
-      title: props.title,
-      content: props.content
-    }
-    axios.post("http://localhost:3001/delete", noteToBeDeleted);
+    const noteToBeDeletedwithInfo={
+      username: props.username,
+      noteToBeDeleted: {title: props.title,
+                        content: props.content}}
+    axios.post(`${API_ENDPOINT}/delete`, noteToBeDeletedwithInfo);
   }
   return (
     <div className="note">

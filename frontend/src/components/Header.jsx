@@ -1,11 +1,11 @@
 import React from "react";
-import HighlightIcon from '@material-ui/icons/Highlight';
+import SpeakerNotesIcon from '@material-ui/icons/SpeakerNotes';
 function Header() {
   return (
     <header>
       <h1>
-      <HighlightIcon />
-      Keeper</h1>
+      <SpeakerNotesIcon fontSize="inherit"/>
+      Remnotes</h1>
     </header>
   );
 }
