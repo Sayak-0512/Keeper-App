@@ -29,7 +29,7 @@ app.get('/error', (req, res) => {
 app.use(express.json());
 const password=process.env.ATLAS_PASSWORD;
 const username=process.env.USER_NAME;
-const url=`mongodb+srv://${username}:${password}@gettingstarted.5l8yh.mongodb.net/remnotesDb`;
+const url=`mongodb+srv://${username}:${password}@gettingstarted.5l8yh.mongodb.net/remnotesDb?retryWrites=true&w=majority`;
 app.use(session({
   secret: 'My name is Sayak China',
   resave: false,
