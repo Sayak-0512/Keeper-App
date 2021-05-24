@@ -39,10 +39,16 @@ app.use(passport.initialize());
 app.use(passport.session());  
 mongoose.set('useCreateIndex', true);
 mongoose.set('bufferCommands', false);
-
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false  })
-.then(() => console.log("Atlas connected"))
-.catch((err) => console.log("Error ",err));
+const connectDb= async () => {
+  try{
+    await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false  });
+    console.log("Atlas connected")
+  }
+  catch(err){
+    console.log("Error ",err);
+  }
+}
+connectDb();
 app.use("/",require("./routes/usernoteRoute"));
 
 app.listen(port, function(){
