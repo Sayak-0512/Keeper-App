@@ -38,6 +38,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());  
 mongoose.set('useCreateIndex', true);
+mongoose.set('bufferCommands', false);
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false  })
 .then(() => console.log("Atlas connected"))
